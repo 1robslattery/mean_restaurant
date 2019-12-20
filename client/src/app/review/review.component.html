@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+			<div class="container-fluid"><h1>Let's eat</h1></div>
+			<div><h4>Write a review for {{ restaurant.name }}</h4></div>
+			<fieldset>
+				<legend></legend>
+				<form (submit)="leaveReview(restaurant._id)">
+					<div>
+						<label><strong>Your Name:</strong></label><br>
+						<input type="text" name="review.customer" [(ngModel)]="review.customer" />
+						<span *ngIf="errors.reviews.errors.customer">{{ errors.reviews.errors.customer.message }}</span>
+					</div><br>
+					<div>
+						<label><strong>Stars:</strong></label><br>
+						<select name="review.stars" [(ngModel)]="review.stars">
+							<option value="1">✩✩✩✩★</option>
+							<option value="2">✩✩✩★★</option>
+							<option value="3" selected>✩✩★★★</option>
+							<option value="4">✩★★★★</option>
+							<option value="5">★★★★★</option>
+						</select><br><br>
+						<label><strong>Description:</strong></label><br>
+						<input type="text" name="review.description" [(ngModel)]="review.description" />
+						<span *ngIf="errors.reviews.errors.description">{{ errors.reviews.errors.description.message }}</span>
+					</div><br>
+					<div>
+						<button [routerLink]="['']">Cancel</button> &nbsp; &nbsp; <input type="submit" value="Submit" />
+					</div>
+				</form>
+			</fieldset>
+		</div>
+	</div>
+</div>

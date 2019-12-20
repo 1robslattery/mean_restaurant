@@ -1,0 +1,22 @@
+<h1>Let's eat</h1>
+
+<h3>Register a new restaurant</h3>
+<fieldset>
+	<legend></legend>
+	<form (submit)="createRestaurant()">
+		<div>
+			<label><strong>Name:</strong></label><br>
+			<input type="text" name="restaurant.name" [(ngModel)]="restaurant.name" />
+			<span *ngIf="errors.name">{{ errors.name.message }}</span>
+		</div><br>
+		<div>
+			<label><strong>Cuisine:</strong></label><br>
+			<input type="text" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine" />
+			<span *ngIf="errors.cuisine">{{ errors.cuisine.message }}</span>
+		</div><br>
+		
+		<div>
+			<button [routerLink]="['']">Cancel</button> &nbsp; &nbsp; <input type="submit" value="Register" />
+		</div>
+	</form>
+</fieldset>

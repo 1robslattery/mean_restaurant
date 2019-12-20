@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<h1>Let's eat</h1><div align="center"><button [routerLink]="['']">Home</button></div>
+
+<fieldset>
+	<h4>Edit a restaurant</h4>
+	<legend></legend>
+		<form (submit)="update(restaurant._id)">
+			<div>
+				<strong>Name:</strong><br>
+				<input type="text" name="restaurant.name" [(ngModel)]="restaurant.name">
+				<span *ngIf="errors.name">{{ errors.name.message }}</span>
+			</div><br>
+			<div>
+				<strong>Cuisine:</strong><br>
+				<input type="text" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
+				<span *ngIf="errors.cuisine">{{ errors.cuisine.message }}</span>
+			</div><br><br>
+			<input type="submit" value="Update restaurant"/> &nbsp; &nbsp; <button [routerLink]="['']">Cancel</button>
+		</form>
+</fieldset>

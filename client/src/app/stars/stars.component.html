@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+	<div class="row">
+		<div>
+			<h1>Let's eat</h1> &nbsp; <p><strong>Write a review for {{ restaurant.name }}</strong></p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<button [routerLink]="['/review', restaurant._id]"><strong>New Review</strong></button>
+	<button [routerLink]="['/']"><strong>Home</strong></button>
+</div><br>
+
+<div class="container">
+		<table border="1">
+			<tr>
+				<th>Customer</th>
+				<th>Stars</th>
+				<th>Description</th>
+			</tr>
+			<tr *ngFor="let review of allreviews">
+				
+				<td>{{ review.customer }}</td>
+				<td>{{ review.stars }}</td>
+				<td>{{ review.description }}</td>
+			</tr>
+
+		</table>
+</div>
